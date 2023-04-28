@@ -125,6 +125,11 @@ namespace NGitLab
             return new RepositoryClient(_api, projectId);
         }
 
+        public IRepositoryClient GetRepository(string projectId)
+        {
+            return new RepositoryClient(_api, projectId);
+        }
+
         public ICommitClient GetCommits(int projectId)
         {
             return new CommitClient(_api, projectId);
@@ -155,12 +160,27 @@ namespace NGitLab
             return new MergeRequestClient(_api, projectId);
         }
 
+        public IMergeRequestClient GetMergeRequest(string projectId)
+        {
+            return new MergeRequestClient(_api, projectId);
+        }
+
         public IMilestoneClient GetMilestone(int projectId)
         {
             return new MilestoneClient(_api, MilestoneScope.Projects, projectId);
         }
 
+        public IMilestoneClient GetMilestone(string projectId)
+        {
+            return new MilestoneClient(_api, MilestoneScope.Projects, projectId);
+        }
+
         public IMilestoneClient GetGroupMilestone(int groupId)
+        {
+            return new MilestoneClient(_api, MilestoneScope.Groups, groupId);
+        }
+
+        public IMilestoneClient GetGroupMilestone(string groupId)
         {
             return new MilestoneClient(_api, MilestoneScope.Groups, groupId);
         }
@@ -216,6 +236,9 @@ namespace NGitLab
         }
 
         public IProtectedBranchClient GetProtectedBranchClient(int projectId)
+            => new ProtectedBranchClient(_api, projectId);
+
+        public IProtectedBranchClient GetProtectedBranchClient(string projectId)
             => new ProtectedBranchClient(_api, projectId);
 
         public ISearchClient GetGroupSearchClient(int groupId)

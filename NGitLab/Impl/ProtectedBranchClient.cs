@@ -10,9 +10,14 @@ namespace NGitLab.Impl
         private readonly string _protectedBranchesUrl;
 
         public ProtectedBranchClient(API api, int projectId)
+            : this(api, projectId.ToStringInvariant())
+        {
+        }
+
+        public ProtectedBranchClient(API api, string projectId)
         {
             _api = api;
-            _protectedBranchesUrl = $"{Project.Url}/{projectId.ToStringInvariant()}/protected_branches";
+            _protectedBranchesUrl = $"{Project.Url}/{Uri.EscapeDataString(projectId)}/protected_branches";
         }
 
         public ProtectedBranch ProtectBranch(BranchProtect branchProtect)

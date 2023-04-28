@@ -38,6 +38,8 @@
 
         IRepositoryClient GetRepository(int projectId);
 
+        IRepositoryClient GetRepository(string projectId);
+
         ICommitClient GetCommits(int projectId);
 
         ICommitStatusClient GetCommitStatus(int projectId);
@@ -50,9 +52,15 @@
 
         IMergeRequestClient GetMergeRequest(int projectId);
 
+        IMergeRequestClient GetMergeRequest(string projectId);
+
         IMilestoneClient GetMilestone(int projectId);
 
+        IMilestoneClient GetMilestone(string projectId);
+
         IMilestoneClient GetGroupMilestone(int groupId);
+
+        IMilestoneClient GetGroupMilestone(string groupId);
 
         IReleaseClient GetReleases(int projectId);
 
@@ -93,6 +101,8 @@
         IProjectLevelApprovalRulesClient GetProjectLevelApprovalRulesClient(int projectId);
 
         IProtectedBranchClient GetProtectedBranchClient(int projectId);
+
+        IProtectedBranchClient GetProtectedBranchClient(string projectId);
 
         public ISearchClient GetGroupSearchClient(int groupId);
 

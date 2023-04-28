@@ -15,10 +15,14 @@ namespace NGitLab.Impl
         private readonly string _projectPath;
 
         public MergeRequestClient(API api, int projectId)
+            : this(api, projectId.ToStringInvariant())
+        {
+        }
+
+        public MergeRequestClient(API api, string projectId)
         {
             _api = api;
-            _projectId = projectId;
-            _projectPath = Project.Url + "/" + projectId.ToStringInvariant();
+            _projectPath = Project.Url + "/" + Uri.EscapeDataString(projectId);
         }
 
         public MergeRequestClient(API api)
