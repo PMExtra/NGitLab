@@ -15,9 +15,14 @@ namespace NGitLab.Impl
         private readonly string _projectPath;
 
         public RepositoryClient(API api, int projectId)
+            : this(api, projectId.ToStringInvariant())
+        {
+        }
+
+        public RepositoryClient(API api, string projectId)
         {
             _api = api;
-            _projectPath = Project.Url + "/" + projectId.ToStringInvariant();
+            _projectPath = Project.Url + "/" + Uri.EscapeDataString(projectId);
             _repoPath = _projectPath + "/repository";
         }
 
