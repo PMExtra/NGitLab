@@ -33,7 +33,7 @@ public class MergeRequest
     public string Description;
 
     [JsonPropertyName("user_notes_count")]
-    public string UserNotesCount;
+    public int UserNotesCount;
 
     [JsonPropertyName("downvotes")]
     public int Downvotes;
