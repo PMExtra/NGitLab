@@ -3305,11 +3305,19 @@ NGitLab.Models.SystemHookUpsert.Token.set -> void
 NGitLab.Models.SystemHookUpsert.Url.get -> System.Uri
 NGitLab.Models.SystemHookUpsert.Url.set -> void
 NGitLab.Models.Tag
-NGitLab.Models.Tag.Commit -> NGitLab.Models.CommitInfo
-NGitLab.Models.Tag.Message -> string
-NGitLab.Models.Tag.Name -> string
-NGitLab.Models.Tag.Release -> NGitLab.Models.ReleaseInfo
+NGitLab.Models.Tag.Commit.get -> NGitLab.Models.CommitInfo
+NGitLab.Models.Tag.Commit.set -> void
+NGitLab.Models.Tag.Message.get -> string
+NGitLab.Models.Tag.Message.set -> void
+NGitLab.Models.Tag.Name.get -> string
+NGitLab.Models.Tag.Name.set -> void
+NGitLab.Models.Tag.Protected.get -> bool
+NGitLab.Models.Tag.Protected.set -> void
+NGitLab.Models.Tag.Release.get -> NGitLab.Models.ReleaseInfo
+NGitLab.Models.Tag.Release.set -> void
 NGitLab.Models.Tag.Tag() -> void
+NGitLab.Models.Tag.Target.get -> NGitLab.Sha1
+NGitLab.Models.Tag.Target.set -> void
 NGitLab.Models.TagCreate
 NGitLab.Models.TagCreate.Message -> string
 NGitLab.Models.TagCreate.Name -> string
